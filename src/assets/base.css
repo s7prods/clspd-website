@@ -1,0 +1,16 @@
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background-color: rgb(141 199 248 / 60%);
+}
