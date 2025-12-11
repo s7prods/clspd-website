@@ -1,4 +1,13 @@
 import { defineConfig } from 'vitepress'
+import { getSidebar } from 'vitepress-plugin-auto-sidebar'
+import { fileURLToPath } from 'url'
+
+const sidebar = getSidebar({ contentRoot: fileURLToPath(import.meta.resolve('../')), contentDirs: ['examples', 'products'], collapsible: true, collapsed: false });
+//console.dir(JSON.stringify(sidebar,null,2))
+sidebar.push({
+  text: 'About',
+  link: '/about.md'
+})
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,21 +17,15 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Products', link: '/products/' },
+      { text: 'About', link: '/about' },
+      //{ text: 'Examples', link: '/markdown-examples' }
     ],
 
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+    sidebar,
+  },
+  vite: {
+    plugins: [
     ]
   }
 })
