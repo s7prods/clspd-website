@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "clspd"
-  text: "clspd-website"
+  text: "Chcs1013's Products"
   tagline: A showcase of my projects and products
   actions:
     - theme: brand
