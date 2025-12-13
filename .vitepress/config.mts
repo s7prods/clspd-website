@@ -27,5 +27,8 @@ export default defineConfig({
   vite: {
     plugins: [
     ]
-  }
+  },
+  sitemap: {
+    hostname: 'https://clspd.top'
+  },
 })
